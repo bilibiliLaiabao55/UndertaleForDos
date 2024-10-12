@@ -1,0 +1,1 @@
+python C:\TURBOC3\Projects\assets\image\imageConver.py
