@@ -14,8 +14,8 @@ for png_file in png_files:
     width, height = image.size
     pixel_list=list()
     png_file = png_file.replace(".png","")
-    for x in range(width):
-        for y in range(height):
+    for y in range(height):
+        for x in range(width):
             pixel_list.append(image.getpixel((x, y)))
     pixel_list_str = str(pixel_list)
     pixel_list_str = pixel_list_str.replace('(255, 201, 14, 255)', 'YELLOW')
@@ -29,5 +29,5 @@ for png_file in png_files:
     pixel_list_str = pixel_list_str.replace("]","}")
     pixel_list_str = pixel_list_str.replace("(","{")
     pixel_list_str = pixel_list_str.replace(")","}")
-    with open(png_file+".cpp","w") as f:
+    with open(png_file+".c","w") as f:
         f.write("const int "+png_file+"["+str(len(pixel_list))+"] = \n"+pixel_list_str+";")
